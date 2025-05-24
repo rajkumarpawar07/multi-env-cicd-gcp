@@ -1,10 +1,10 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'REGION-docker.pkg.dev/PROJECT_ID/my-app-repo/my-app-prod:$SHORT_SHA', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/PROJECT_ID/my-app-repo/my-app-prod:$SHORT_SHA', '.']
     dir: 'app/'
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'REGION-docker.pkg.dev/PROJECT_ID/my-app-repo/my-app-prod:$SHORT_SHA']
+    args: ['push', 'us-central1-docker.pkg.dev/PROJECT_ID/my-app-repo/my-app-prod:$SHORT_SHA']
 
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
@@ -13,8 +13,8 @@ steps:
         'run',
         'deploy',
         'my-app-prod',
-        '--image=REGION-docker.pkg.dev/PROJECT_ID/my-app-repo/my-app-prod:$SHORT_SHA',
-        '--region=REGION',
+        '--image=us-central1-docker.pkg.dev/PROJECT_ID/my-app-repo/my-app-prod:$SHORT_SHA',
+        '--region=us-central1',
         '--platform=managed',
         '--set-env-vars=ENV=prod',
         '--allow-unauthenticated'
