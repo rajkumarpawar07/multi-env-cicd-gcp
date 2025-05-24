@@ -17,3 +17,7 @@ steps:
         "--allow-unauthenticated",
         "--set-env-vars", "ENV=dev"
       ]
+
+
+options:
+  logging: CLOUD_LOGGING_ONLY
