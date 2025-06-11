@@ -15,8 +15,8 @@ A reusable Terraform-based infrastructure provisioning and CI/CD pipeline templa
 - Google Cloud Build
 - Google Cloud Storage
 - IAM
-- YAML, Bash
-- Cloud Functions
+- YAML
+- Cloud Run
 
 ## Architecture
 ![Architecture Diagram](./terraform_pipeline_architecture.png)
